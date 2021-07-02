@@ -1,0 +1,33 @@
+version: "3.7"
+volumes:
+  portainer_data: {}
+
+networks:
+  monitoring-tier:
+
+services:
+
+  node-exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: nodeexp
+    restart: unless-stopped
+    ports:
+      - 9100:9100
+    networks:
+      - monitoring-tier
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 8000:8000 
+      - 9000:9000 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data portainer/portainer-ce
+    networks:
+      - monitoring-tier
+  
