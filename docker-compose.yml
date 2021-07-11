@@ -24,7 +24,7 @@ services:
     ports:
       - 9617:9617 
     networks:
-      - back-tier
+      - monitoring-tier
 
   portainer:
     image: portainer/portainer-ce:latest
