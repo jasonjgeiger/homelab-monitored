@@ -16,16 +16,6 @@ services:
     networks:
       - monitoring-tier
 
-  pihole-exporter:
-    image: ekofr/pihole-exporter:latest
-    container_name: pihole-exporter
-    env_file:
-      - ./pihole-exporter.env
-    ports:
-      - 9617:9617 
-    networks:
-      - monitoring-tier
-
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer
