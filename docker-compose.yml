@@ -18,7 +18,7 @@ services:
 
   pihole-exporter:
     image: ekofr/pihole-exporter:latest
-    container_name: pihole
+    container_name: pihole-exporter
     env_file:
       - ./pihole-exporter.env
     ports:
