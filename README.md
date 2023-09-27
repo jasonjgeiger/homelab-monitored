@@ -1,6 +1,6 @@
 # What this repo is
 
-This is for server nodes that are to be monitored. It sents stats.
+This is for server nodes that are to be monitored. It sends stats.
 
 # What this repo is not
 
